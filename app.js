@@ -7,5 +7,5 @@
   var key='event-calendar.entries.v1';
   try{source.value=localStorage.getItem(key)||'';}catch(ignore){}
   source.oninput=function(){try{localStorage.setItem(key,source.value);}catch(ignore){}};
-  document.getElementById('clear').onclick=function(){source.value='';result.textContent='';};
+  document.getElementById('clear').onclick=function(){source.value='';result.textContent='';try{localStorage.removeItem(key);}catch(ignore){}};
 }());
